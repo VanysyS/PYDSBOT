@@ -75,10 +75,6 @@ class UtilityCommands(commands.Cog):
                     response_json = await response.json()
                     answer = response_json["candidates"][0]["content"]["parts"][0]["text"]
 
-                    # 2. Відправляємо згенерований текст користувачу
-                    # followup.send автоматично замінить напис "Бот думає..." на цю відповідь
-                    await interaction.followup.send(answer)
-
                     # Створюємо Embed (колір можна обрати будь-який)
                     embed = discord.Embed(
                         title=f"Запит: {prompt}",
