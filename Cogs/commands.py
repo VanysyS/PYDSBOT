@@ -79,6 +79,21 @@ class UtilityCommands(commands.Cog):
                     # followup.send автоматично замінить напис "Бот думає..." на цю відповідь
                     await interaction.followup.send(answer)
 
+                    # Створюємо Embed (колір можна обрати будь-який)
+                    embed = discord.Embed(
+                        title=f"Запит: {prompt}",
+                        description=answer,
+                        color=discord.Color.blurple()
+                    )
+
+                    # За бажанням додаємо іконку того, хто запитав
+                    if interaction.user.avatar:
+                        embed.set_footer(text=f"Відповідь для {interaction.user.display_name}",
+                                         icon_url=interaction.user.avatar.url)
+
+                    # Відправляємо саме ембед, а не звичайний текст
+                    await interaction.followup.send(embed=embed)
+
         except Exception as e:
             print(f"Виникла помилка: {e}")
             await interaction.followup.send("Виникла технічна помилка під час обробки запиту.")
