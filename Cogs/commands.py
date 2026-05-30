@@ -14,7 +14,7 @@ class UtilityCommands(commands.Cog):
     # Декоратор, який перетворює метод на слеш-команду
     @app_commands.command(name="виклик", description="Викликає обраного користувача до войсу")
     async def viklik(self, interaction: discord.Interaction, member: discord.Member):
-        SPECIAL_ID = 323 #621295677875552257
+        SPECIAL_ID = 621295677875552257
         if member.id == SPECIAL_ID:
             await member.send(f"Оцей хуєсос -> {interaction.user.mention} на тебе спам хотів кинути!")
             await interaction.response.send_message("А хуй тобі, йому не можна спамити!!!")
