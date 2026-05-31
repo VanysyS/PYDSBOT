@@ -22,7 +22,7 @@ class UtilityCommands(commands.Cog):
             await interaction.response.send_message("Зараз покличемо!")
             i = 0
             while i < 20:
-                await member.send(f"Тебе хуєсоса кличе у войс ця людина -> {interaction.user.mention}")
+                await member.send(f"Тебе, хуєсоса, кличе у войс ця людина -> {interaction.user.mention}")
                 i += 1
 
     @app_commands.command(name="гей", description="Показує на скільки відсотків людина є геєм")
